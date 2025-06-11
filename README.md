@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 function hasClinicAccess($requested_clinic_id) {
     if (!isset($_SESSION['clinic_id'])) {
@@ -99,3 +100,7 @@ Thanks to our [ONC Certification Major Sponsors](https://www.open-emr.org/wiki/i
 ### License
 
 [GNU GPL](LICENSE)
+=======
+# openemer-weightloss
+openemer-weightloss
+>>>>>>> a29f46c2aeb7fde53a944e533e5443fd56c47452
