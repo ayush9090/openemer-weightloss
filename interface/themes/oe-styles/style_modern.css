@@ -1,0 +1,223 @@
+/* Modern styling for OpenEMR while preserving functionality */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=Manrope:wght@400;500;700&display=swap');
+
+/* Global styles */
+body {
+  font-family: 'Lexend', sans-serif;
+  background: #FAFAFA;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styling */
+#container_div {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Search bar styling */
+input[type="text"],
+input[type="search"],
+.form-control {
+  border: 1px solid rgba(162, 161, 168, 0.1);
+  border-radius: 80px;
+  padding: 13px 16px;
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Sidebar styling */
+#mainBox > nav,
+.navbar {
+  width: 260px;
+  border-right: 2px solid #D5D5DB;
+  background: #fff;
+  padding: 20px;
+}
+
+#mainBox > nav a,
+.navbar a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #283342;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+#mainBox > nav a.active,
+.navbar a.active {
+  background: #F4F3FF;
+  color: #1A49F2;
+}
+
+/* Card styling */
+.card,
+.panel {
+  background: #fff;
+  border: 1px solid #B7B1B1;
+  border-radius: 16px;
+  padding: 30px;
+  flex: 1 1 250px;
+  min-width: 240px;
+  margin-bottom: 20px;
+}
+
+.card h4,
+.panel h4 {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.card .value,
+.panel .value {
+  font-size: 30px;
+  color: #111;
+  font-weight: 500;
+}
+
+.card .change,
+.panel .change {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #B7B1B1;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.table th, .table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: #1A49F2;
+  border-color: #1A49F2;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+.btn-primary:hover {
+  background-color: #0d3fd9;
+  border-color: #0d3fd9;
+}
+
+/* Chart container styling */
+.chart-container {
+  background: #fff;
+  border: 1px solid #B7B1B1;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  height: 308px;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 220px !important;
+}
+
+/* POS Panel styling */
+.pos-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 500px;
+  max-width: 100%;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.pos-panel.active {
+  right: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 999;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* Order summary styling */
+.order-summary {
+  margin-top: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.order-summary table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-summary th, .order-summary td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px dashed #ccc;
+}
+
+/* Checkout button styling */
+.checkout-btn {
+  background-color: #1A49F2;
+  color: white;
+  padding: 15px;
+  width: 100%;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  
+  #mainBox > nav,
+  .navbar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #D5D5DB;
+  }
+} 

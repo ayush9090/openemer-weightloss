@@ -1,0 +1,224 @@
+/* Modern Theme for OpenEMR
+ * Based on the provided design while maintaining OpenEMR functionality
+ */
+
+@import "../default-variables";
+
+// Modern theme colors
+$modern-primary: #1A49F2;
+$modern-secondary: #F4F3FF;
+$modern-text: #283342;
+$modern-border: #D5D5DB;
+$modern-background: #FAFAFA;
+$modern-card-bg: #FFFFFF;
+$modern-shadow: rgba(0, 0, 0, 0.1);
+
+// Override default variables
+$primary: $modern-primary;
+$secondary: $modern-secondary;
+$body-bg: $modern-background;
+$body-color: $modern-text;
+$border-color: $modern-border;
+
+// Import Bootstrap 4 SCSS Files
+// bs4import
+
+// Fix Font Awesome fonts path
+$fa-font-path: "../assets/@fortawesome/fontawesome-free/webfonts";
+// Font Awesome Import
+@import "../../../public/assets/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../../public/assets/@fortawesome/fontawesome-free/scss/brands";
+@import "../../../public/assets/@fortawesome/fontawesome-free/scss/regular";
+@import "../../../public/assets/@fortawesome/fontawesome-free/scss/solid";
+
+@import "../core";
+@import "../theme-defaults";
+
+// Modern theme specific styles
+:root {
+  --modern-primary: #{$modern-primary};
+  --modern-secondary: #{$modern-secondary};
+  --modern-text: #{$modern-text};
+  --modern-border: #{$modern-border};
+  --modern-background: #{$modern-background};
+  --modern-card-bg: #{$modern-card-bg};
+  --modern-shadow: #{$modern-shadow};
+}
+
+// Global styles
+body {
+  font-family: 'Lexend', sans-serif;
+  background: var(--modern-background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Header styles
+.header {
+  background: var(--modern-card-bg);
+  padding: 20px;
+  box-shadow: 0 2px 4px var(--modern-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  border: 1px solid rgba(162, 161, 168, 0.1);
+  border-radius: 80px;
+  padding: 13px 16px;
+  width: 100%;
+  max-width: 500px;
+  background: var(--modern-card-bg);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+// Sidebar styles
+.sidebar {
+  width: 260px;
+  border-right: 2px solid var(--modern-border);
+  background: var(--modern-card-bg);
+  padding: 20px;
+  
+  nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--modern-text);
+    font-weight: 500;
+    margin-bottom: 10px;
+    
+    &.active {
+      background: var(--modern-secondary);
+      color: var(--modern-primary);
+    }
+  }
+}
+
+// Main content styles
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+// Card styles
+.card {
+  background: var(--modern-card-bg);
+  border: 1px solid var(--modern-border);
+  border-radius: 16px;
+  padding: 30px;
+  flex: 1 1 250px;
+  min-width: 240px;
+  
+  h4 {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .value {
+    font-size: 30px;
+    color: #111;
+    font-weight: 500;
+  }
+  
+  .change {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+// Table styles
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  th, td {
+    padding: 12px;
+    border-bottom: 1px solid var(--modern-border);
+    text-align: left;
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid var(--modern-border);
+  }
+}
+
+// POS Panel styles
+.pos-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 500px;
+  max-width: 100%;
+  height: 100vh;
+  background: var(--modern-card-bg);
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+  
+  &.active {
+    right: 0;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 999;
+  
+  &.active {
+    display: block;
+  }
+}
+
+// Button styles
+.btn-primary {
+  background-color: var(--modern-primary);
+  border-color: var(--modern-primary);
+  color: white;
+  
+  &:hover {
+    background-color: darken($modern-primary, 10%);
+    border-color: darken($modern-primary, 10%);
+  }
+}
+
+// Chart container styles
+.chart-container {
+  background: var(--modern-card-bg);
+  border: 1px solid var(--modern-border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  height: 308px;
+  
+  canvas {
+    width: 100% !important;
+    height: 220px !important;
+  }
+} 
